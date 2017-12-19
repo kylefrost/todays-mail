@@ -1,9 +1,9 @@
-from os.path import basename
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
 from email.utils import formataddr
 from email.header import Header
+from os.path import basename
 from datetime import date
 import smtplib
 import config

@@ -1,4 +1,4 @@
-from mail import download_files
+from usps import download_files
 from sendemail import send_mail
 import os
 
