@@ -4,9 +4,11 @@ from selenium import webdriver
 from sendemail import send_mail
 import time
 import os
+import sys
 import config
 
 def download_files():
+    thisPath = os.path.split(os.path.abspath(sys.argv[0]))[0] + "/"
     files = []
 
     url = 'https://reg.usps.com/portal/login?app=RMIN&appURL=https%3A%2F%2Finformeddelivery.usps.com%2Fbox%2Fpages%2Fintro%2Fstart.action%3Frestart%3D1'
@@ -37,8 +39,8 @@ def download_files():
             img_src = mail.find("img")["src"]
             image_url = "https://informeddelivery.usps.com/box/pages/secure/" + img_src
             browser.get(image_url)
-            browser.save_screenshot(img_src.split("=", 1)[1] + ".png")
-            files.append(img_src.split("=", 1)[1] + ".png")
+            browser.save_screenshot(thisPath + img_src.split("=", 1)[1] + ".png")
+            files.append(thisPath + img_src.split("=", 1)[1] + ".png")
 
     browser.quit()
     display.stop()

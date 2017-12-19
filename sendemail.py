@@ -7,12 +7,16 @@ from email.header import Header
 from datetime import date
 import smtplib
 import config
+import sys
+import os
 
 def send_mail(files=None):
-    with open('email.html', 'r') as htmlFile:
+    thisPath = os.path.split(os.path.abspath(sys.argv[0]))[0] + "/"
+
+    with open(thisPath + 'email.html', 'r') as htmlFile:
         HTML = htmlFile.read()
 
-    with open('email.css', 'r') as cssFile:
+    with open(thisPath + 'email.css', 'r') as cssFile:
         CSS = cssFile.read()
 
     HTML = HTML.replace('{{ emailcss }}', CSS)
