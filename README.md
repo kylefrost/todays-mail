@@ -1,7 +1,15 @@
 <h1 align="center">todays-mail</h1>
 <p align="center">Have your USPS mail scans emailed to you.</p>
 
-## Set Up
+## Requirements
+
+* A MyUSPS Account
+  * Can sign up here: https://informeddelivery.usps.com/
+* A confirmed MyUSPS address
+* Python 2
+* `selenium` set up using Google Chrome
+
+## How to Run
 
 1. Clone this repository
 2. Copy `config-example.py` to `config.py`
