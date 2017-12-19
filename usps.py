@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from pyvirtualdisplay import Display
 from selenium import webdriver
-from sendemail import send_mail
 import time
 import os
 import sys
